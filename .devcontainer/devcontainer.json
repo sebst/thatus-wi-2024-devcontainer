@@ -1,0 +1,15 @@
+{
+    "name": "devcontainers-ci",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "cacheFrom": "ghcr.io/sebst/thatus-wi-2024-devcontainer:latest",
+        // "options": [
+        //     "--cache-from=ghcr.io/sebst/thatus-wi-2024-devcontainer:latest"
+        // ]
+        // "options": ["--no-cache"]
+    },
+    "remoteUser": "root",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": "latest"
+    }
+}
