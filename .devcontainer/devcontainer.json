@@ -1,8 +1,9 @@
 {
     "name": "devcontainers-ci",
     "build": {
-        "dockerfile": "Dockerfile",
-        "cacheFrom": "ghcr.io/sebst/thatus-wi-2024-devcontainer:latest",
+        "dockerfile": "./Dockerfile",
+        "context": ".",
+        "cacheFrom": "ghcr.io/sebst/thatus-wi-2024-devcontainer",
         // "options": [
         //     "--cache-from=ghcr.io/sebst/thatus-wi-2024-devcontainer:latest"
         // ]

@@ -9,7 +9,7 @@ ENV DEVCONTAINER=true
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y \
+RUN apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
     git \
@@ -37,10 +37,14 @@ RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
 RUN /root/.pyenv/bin/pyenv install 3.12
 RUN /root/.pyenv/bin/pyenv global 3.12
-RUN apt-get install -y postgresql postgresql-contrib libpq-dev
+RUN apt-get install -y --no-install-recommends postgresql postgresql-contrib libpq-dev
 RUN ls /root/.pyenv/bin
 RUN /root/.pyenv/shims/python -m pip install --upgrade pip
 RUN /root/.pyenv/shims/python -m pip install psycopg2
+
+
+# __DEVCONTAINER_SNIPPET_INSERT__ (control where snippets get inserted using the devcontainer CLI)
+
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
